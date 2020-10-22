@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import '../codebase/spreadsheet.js';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'dhtmlXTest';
+
+  spreadsheet: any = {};
+
+  // tslint:disable-next-line: align
+  this.spreadsheet = new dhx.Spreadsheet(this.container.nativeElement, {
+    editLine: false
+  });
+
 }
